@@ -4,7 +4,7 @@ class UserAccount():
     def __init__(self):
         self.accounts = []  # 存儲帳號資料
         self.grid = None    # AgGrid 表格
-        self.account_input = None
+        self.account_input = None # 帳號輸入框
         self.password_input = None
         self.email = None
         self.phonenumber = None

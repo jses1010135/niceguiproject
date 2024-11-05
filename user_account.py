@@ -44,7 +44,7 @@ class UserAccount():
         account = self.account_input.value
         password = self.password_input.value
         email = self.email_input.value
-        address = self.account_input.value
+        address = self.address_input.value
         if account and password:
             new_entry = {'account': account, 'password': password, 'email': email, 'address': address}  # 確保新增的資料格式正確
             self.accounts.append(new_entry)  # 新增到列表

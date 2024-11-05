@@ -61,7 +61,7 @@ class UserAccount():
             self.accounts = [row for row in self.accounts if row['account'] not in selected_accounts]  # 刪除選中的帳號
             self.refresh()  # 刷新顯示
 
-    def on_cell_value_changed(self, event: events.GenericEventArguments): #事件處理程序  #event: clinet端觸發的事件 #arguments: 事件參數
+    def on_cell_value_changed(self, event: events.GenericEventArguments): #事件處理程序  #event: clinet端觸發的事件用event的形式傳回去server #arguments: 事件參數
         account = event.args['data']['account'] # 取得帳號
         password = event.args['data']['password'] # 取得密碼
         email = event.args['data']['email'] # 取得電子郵件

@@ -5,7 +5,9 @@ class UserAccount(Base):
     __tablename__ = 'user_account'    
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)#primary_key=True:主鍵 #index=True:索引 #autoincrement=True:自動增加
-    account = Column(String, unique=True, index=True)
-    email = Column(String, unique=True, index=True)
+    account = Column(String, unique=True, index=True)#unique=True:唯一值
+    email = Column(String, unique=True, index=True)#unique=True:唯一值
     password = Column(String)
     address = Column(String)
+
+

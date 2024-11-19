@@ -1,4 +1,4 @@
-from nicegui import ui, events
+from nicegui import ui, events #GUI
 from user_account_controler import UserAccountControler  
 
 class UserAccountView():
@@ -38,9 +38,9 @@ class UserAccountView():
         await self.refresh()
 
 
-    async def refresh(self):#只要程式中有使用await（非同步等待） 則函數定義成async 非同步函數 #使用await
+    async def refresh(self):
         """更新 AgGrid 表格的顯示資料。"""
-        user_accounts = await UserAccountControler.select_all()
+        user_accounts = await UserAccountControler.select_all()#只要程式中有使用await（非同步等待） 則函數定義成async 非同步函數 #使用await
         options = [{'id':u.id, 'account':u.account, 'password':u.password, 'email':u.email, 'address':u.address} for u in user_accounts]
         self.grid.options['rowData'] = options  # 設定新的資料
         self.grid.update()  # 更新顯示

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer #資料庫欄位型態 #model基本操作：新增、刪除、修改、查詢
 from init_db import Base
 
 class UserAccount(Base):

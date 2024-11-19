@@ -1,5 +1,5 @@
 from nicegui import ui, app
-from user_account_view import UserAccountView
+from view.user_account_view import UserAccountView
 from init_db import engine, create_db_and_tables
 
 def init_app():

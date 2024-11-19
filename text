@@ -1,0 +1,6 @@
+user:{
+    account
+    password
+    email
+    address
+}

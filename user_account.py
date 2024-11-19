@@ -1,4 +1,5 @@
 from nicegui import ui, events
+import sqlite3
 
 class UserAccount():
     def __init__(self): # 類別
@@ -72,6 +73,11 @@ class UserAccount():
                 entry['password'] = password # 更新密碼
                 entry['email'] = email # 更新電子郵件
                 entry['address'] = address # 更新住址            
+        
+        connect = sqlite3.connect('test.db')
+        cursor = connect.cursor()
+
+        cursor.execute('update user set password = ?, email = ? where account = ?', (password, email, account))
 
         self.refresh()        
 

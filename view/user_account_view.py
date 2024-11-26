@@ -1,5 +1,5 @@
 from nicegui import ui, events #GUI
-from user_account_controler import UserAccountControler  
+from controlers.user_account_controler import UserAccountControler  
 
 class UserAccountView():
     def __init__(self):
@@ -26,7 +26,7 @@ class UserAccountView():
                 'columnDefs': [
                     {'headerName': '選擇', 'field': 'selected','width': 60, 'checkboxSelection': True},  # 增加選擇框
                     {'headerName': 'ID', 'field': 'id', 'hide': True},
-                    {'headerName': '帳號', 'field': 'account', 'width': 100 },  # 可編輯的帳號欄
+                    {'headerName': '帳號', 'field': 'account', 'width': 100,'editable': True },  # 可編輯的帳號欄
                     {'headerName': '密碼', 'field': 'password', 'width': 100,  'editable': True},  # 可編輯的密碼欄
                     {'headerName': '電子郵件', 'field': 'email', 'flex': 1,  'editable': True},  # 可編輯的帳號欄
                     {'headerName': '住址', 'field': 'address', 'flex': 1, 'editable': True},  # 可編輯的帳號欄                    

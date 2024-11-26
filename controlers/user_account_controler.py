@@ -5,17 +5,17 @@ from typing import List
 
 class UserAccountControler:
 
-    @staticmethod
+    @staticmethod#宣告類別方法
     async def add_user_account(account: str, email: str, password: str, address: str) -> None:
-        async with get_async_session_context() as session:        
-            user_account = UserAccount(
+        async with get_async_session_context() as session:  #get_async_session_context() 建立資料庫連線 #session:資料庫連線      
+            user_account = UserAccount(#UserAccount:資料表 
                 account = account,
                 email = email,
                 password = password,
                 address = address
             )
-            session.add(user_account)
-            await session.commit()
+            session.add(user_account)#將資料加入資料庫
+            await session.commit()#await:等待資料庫操作完成 #commit:確認資料庫操作 #async:非同步函數
             return user_account
         
     @staticmethod

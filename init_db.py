@@ -6,7 +6,7 @@ from typing import AsyncGenerator
 
 
 
-DATABASE_URL = "sqlite+aiosqlite:///.sqlite/testdb.db"
+DATABASE_URL = "sqlite+aiosqlite:///login/.sqlite/testdb.db"
 engine = create_async_engine(DATABASE_URL)
 async_session_maker = async_sessionmaker(engine, expire_on_commit=False)
 Base: DeclarativeMeta = declarative_base()

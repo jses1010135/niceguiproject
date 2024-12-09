@@ -43,17 +43,17 @@ class UserAccountControler:
             await session.commit()                              
 
     @staticmethod
-    async def select_all() -> List[UserAccount]:
-        async with get_async_session_context() as session:
-            result = await session.execute(select(UserAccount))
-            user_accounts = result.scalars().all()
+    async def select_all() -> List[UserAccount]:#List:資料型態 #UserAccount:資料表 #select_all():查詢所有資料 #async:非同步函數 #->:回傳值 #List[UserAccount]:回傳值型態 
+        async with get_async_session_context() as session:#get_async_session_context() 建立資料庫連線 #session:資料庫連線 
+            result = await session.execute(select(UserAccount))#result:資料庫查詢結果 #await:等待資料庫操作完成 #execute:執行資料庫操作 #select(UserAccount):查詢資料表所有資料
+            user_accounts = result.scalars().all()#user_accounts:資料表所有資料
             return user_accounts
 
     @staticmethod
     async def select_user_account(id: int = None, account: str = None, email: str = None) -> List[UserAccount]:
         async with get_async_session_context() as session:
             result = await session.execute(
-                select(UserAccount).where((UserAccount.id == id) | (UserAccount.account == account) | (UserAccount.emal == email))
+                select(UserAccount).where((UserAccount.id == id) | (UserAccount.account == account) | (UserAccount.emal == email)) #where:查詢條件 #|:或 #&:且 #==:等於 #!=:不等於 #>:大於 #<:小於 #>=:大於等於 #<=:小於等於 #in:在...之中 #not in:不在...之中 #like:相似
             )
             user_account = result.scalars().first()
             return user_account    
